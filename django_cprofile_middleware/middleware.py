@@ -41,7 +41,7 @@ class ProfilerMiddleware(MiddlewareMixin):
     http://www.slideshare.net/zeeg/django-con-high-performance-django-presentation.
     """
     def can(self, request):
-        return True
+        return 'prof' in request.GET
 
     def process_view(self, request, callback, callback_args, callback_kwargs):
         if self.can(request):
